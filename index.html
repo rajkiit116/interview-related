@@ -230,7 +230,28 @@ I don't remember but python has implemented this. But thats not the case for jav
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>
+					Yes a main method can be overloaded as other functions can be overloaded.One thing needs to be taken care is that there should be atleast one main function with "String args[] " as arguments .And there can be any number of main functions in your program with different arguments and functionality.Lets understand through a simple example:
+
+Class A{
+
+public static void main(String args)
+{
+System.out.println("This is the main function ");
+A object= new A();
+object.main("Hi this is overloaded function");//Calling the main function
+}
+
+public static void main(String argu)     //duplicate main function
+{
+System.out.println("main(String argu)");
+}
+}
+Output: This is the main function
+Hi this is overloaded function
+					
+					
+					</p>
 				</div>
 			</div>
 			<div class="post">
