@@ -52,7 +52,41 @@
 				<p class="meta"><span class="date">Feb 22, 2017</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>Java Generic Type will enable programmers to specify, specific Data type in Java .we can useGeneric for class,Method,Collection.
+
+* Suppose if we take example of Hashset normally when we create Object of set it will allow all data type in reference . so while retrieving value we need to perform type casting because we don't know which type of Data it is .
+
+* So to overcome typecasting problem and enable to add only one type on data in reference of set we use generic in Java
+
+ --> How to create Generic type in Java
+  Set<String> hashset=new HashSet<String>();
+//it will allow to add only String type
+and while retrieving no need to perform typecasting .
+
+* if we try to add other then String type then it will compile time error like "The method add(String) in the type Set<String> is not applicable for the arguments (int);"
+
+import java.util.*;
+ 
+public class GenericType {
+/*
+ ** author:Anand
+ */
+  public static void main(String[] args){
+   String value=null;
+   //Let's create Hashset Object with Genric Data type
+  Set<String> hashset=new HashSet<String>();//it will allow only String type to add on Reference
+  hashset.add("Bangalore");
+  hashset.add("Chennai");
+  hashset.add("Hyderabad");
+  Iterator<String> itr=hashset.iterator();//Iterate only String object
+  while(itr.hasNext()){
+   value=itr.next();
+   System.out.println(value);
+  }
+ }
+}
+					https://stackoverflow.com/questions/10943137/difference-between-generic-type-and-wildcard-type
+					</p>
 				</div>
 			</div>
 			<div class="post">
