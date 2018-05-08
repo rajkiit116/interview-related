@@ -160,7 +160,14 @@ boolean	not precisely defined*	true or false
 				<p class="meta"><span class="date">Feb 22, 2017</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>1) transient keyword is used along with instance variables to exclude them from serialization process. if a field  is transient its value will not be persisted. see my post what is transient keyword in java for more details. On the other hand volatile keyword can also be used in variables to indicate compiler and JVM that always read its value from main memory and follow happens-before relationship on visibility of volatile variable among multiple thread. see my post how and when to use volatile keyword in Java for more details.
+
+
+ 
+2) transient keyword can not be used along with static keyword but volatile can be used along with static.
+
+3) transient variables are initialized with default value during de-serialization and there assignment or restoration of value has to be handled by application code.
+					</p>transient keyword is used along with instance variables to exclude them from serialization process. If a field is transient its value will not be persisted. On the other hand, volatile keyword is used to mark a Java variable as "being stored in main memory".
 				</div>
 			</div>
 
@@ -170,7 +177,10 @@ boolean	not precisely defined*	true or false
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p> 
+					Java will run the static intializers of a class before any method is called (or any instance is created).
+					
+					</p>
 				</div>
 			</div>
 			<div class="post">
@@ -178,7 +188,9 @@ boolean	not precisely defined*	true or false
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>Java does not support multiple inheritance , multipath and hybrid inheritance because of ambiguity problem:
+						https://www.geeksforgeeks.org/java-and-multiple-inheritance/
+					</p>
 				</div>
 			</div>
 			<div class="post">
@@ -186,7 +198,31 @@ boolean	not precisely defined*	true or false
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>
+					Lets say you have two methods
+
+Method 1 : int add(int a, int b) ;
+
+Method 2 : string add(int a, int b) ;
+
+1st one returns the sum of numbers as numeric integers as 1,2,3..
+
+2nd one returns the sum in words as one, two, three..
+
+Now just for a moment imagine you are a computer and you have to give the output of add(4,5);
+
+Its confusing for you too to know which method to use and you will ask me which one to use, same happens with the compiler and it produces an error like ambiguous function call which is kind of asking only which method to use.
+
+I understand that you might be thinking like the return type should be enough for the compiler to decide which method to call, like int a=add(4,5); should call the first, and string a=add(4,5); should call the second one.
+
+But that would also create a problem when the compiler has to do a auto type casting.
+
+I think the best way would be that the return type of all methods should be object and base on the programmer requirements the resul can be down casted.
+
+I don't remember but python has implemented this. But thats not the case for java
+						
+						Actually return type is not a part of method signature, so changing return type only, is not sufficient to tell JVM which method should be picked since all other things are same in both the methods. .
+					</p>
 				</div>
 			</div>
 			<div class="post">
