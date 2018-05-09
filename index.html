@@ -255,11 +255,24 @@ Hi this is overloaded function
 				</div>
 			</div>
 			<div class="post">
-				<h2 class="question"><a href="#"> Why jvm call main method with srray of string type?</a></h2>
+				<h2 class="question"><a href="#"> Why jvm call main method with array of string type?</a></h2>
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>The fact that you have a main method that doesn't take a string array is irrelevant. just like any other method, you can create multiple versions of main() that take different parameters - the runtime will just ignore them.
+
+						Isn't that overloading? It's fully legal to define a method
+						static void main() {
+						}
+
+						It's just not the entry point the JVM will be looking for.
+						So a main(String[]) would be called, to the compiler, something like main_String_arr, and main() would be called something like main.
+						It's still a valid method.For example, you could have a static method called "main" with an int parameter if you wanted:
+
+public static void main(int foo){}
+
+The compiler doesn't complain because it's a valid method! It's just that, in order to run a Java program, Java looks for a static method called "main" with a single String array argument.
+					</p>
 				</div>
 			</div>
 			<div class="post">
@@ -283,7 +296,10 @@ Hi this is overloaded function
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p> 
+						
+					<a href="https://www.geeksforgeeks.org/can-we-overload-or-override-static-methods-in-java/">geeks for geeks answer</a>
+					</p>
 				</div>
 			</div>
 			<div class="post">
@@ -291,7 +307,10 @@ Hi this is overloaded function
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>Java 5.0 onwards it is possible to have different return type for a overriding method in child class, but child’s return type should be sub-type of parent’s return type. Overriding method becomes variant with respect to return type
+<a href="https://www.geeksforgeeks.org/covariant-return-types-java/">geeks for geesk  covariance return type </a>
+
+					</p>
 				</div>
 			</div>
 			<div class="post">
@@ -299,7 +318,16 @@ Hi this is overloaded function
 				<p class="meta"><span class="date">May 2, 2018</span></p>
 				<div style="clear: both;">&nbsp;</div>
 				<div class="entry">
-					<p>Answer</p>
+					<p>
+
+<a href="https://stackoverflow.com/questions/15427747/which-will-be-loaded-first-static-variable-or-static-block">which-will-be-loaded-first-static-variable-or-static-block</a>
+<a href=""https://stackoverflow.com/questions/17242649/can-non-static-methods-modify-static-variables>can-non-static-methods-modify-static-variables</a>
+<a href="https://www.journaldev.com/1365/static-keyword-in-java">geeks for geeks static-keyword-in-java</a>
+
+
+
+
+					</p>
 				</div>
 			</div>
 			<div class="post">
