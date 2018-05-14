@@ -1,0 +1,50 @@
+If you declare private variable inside abstract ,you can not use inside the abstract class.
+If you wnat to use it make it static.
+Otherwise make child class then use it inside child class.
+
+--
+access modifiers
+private access modifier scope definde inside class only.
+defalut access modifier scopre exists for package.
+
+protected access modifer scope exist for package. it scope can be broadned using inheriance.
+
+public access modifier has broadest scope among all access modifier.
+
+There is not term like access specifier in java
+
+
+non access modifer
+staic 
+final
+synchronized
+volatile
+---------------------------
+why to use inner class
+simple answer is any class which is only be used by its outer class, || map and pie
+
+Local inner class can not be private, protected or public because they exist only inside of local block or method. You can only use final modifier with local inner class.
+
+
+
+-------------------------------------------------
+declared nested interfaces and their impacted
+an interface can extend multipal inteface
+
+
+
+--------------------------------------------------
+
+
+----------------------------------------------------
+justfortechie and javaconceptOfTheDay
+
+
+----------------------------------------------------
+Collectors
+---------------why default method in java8
+Interfaces can have default methods with implementation from java 8 onwards.
+Interfaces can have static methods as well similar to static method of classes.
+Default methods were introduced to provide backward comparability for old interfaces so that they can have new methods without effecting existing code.
+
+------------------------------------------------------

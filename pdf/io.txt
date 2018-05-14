@@ -1,0 +1,20 @@
+1
+) What is difference between IO and NIO?
+Main difference between NIO and IO is that NIO provides asynchronous, non blocking IO, which is critical to write faster and scalable networking systems. While most of utility from IO classes are blocking and slow. NIO take advantage of asynchronous system calls in UNIX systems such as select() system call for network sockets. Using select(), an application can monitor several resources at the same time and can also poll for network activity without blocking. The select() system call identifies if data is pending or not, then read() or write() may be used knowing that they will complete immediately.
+
+
+
+
+
+----:Collection:---
+hashCode() is used for bucketing in Hash implementations like HashMap, HashTable, HashSet, etc.
+
+The value received from hashCode() is used as the bucket number for storing elements of the set/map. This bucket number is the address of the element inside the set/map.
+
+When you do contains() it will take the hash code of the element, then look for the bucket where hash code points to. If more than 1 element is found in the same bucket (multiple objects can have the same hash code), then it uses the equals() method to evaluate if the objects are equal, and then decide if contains() is true or false, or decide if element could be added in the set or not.
+
+The hashCode method for a given class can be used to test for object inequality, but NOT object equality, for that class.
+
+The hashCode method is used by the java.util.HashSet collection class to group the elements within that set into hash buckets for swift retrieval.
+
+
